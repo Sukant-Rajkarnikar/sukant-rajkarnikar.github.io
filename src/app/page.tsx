@@ -138,7 +138,7 @@ function Projects() {
 
 function Experience() {
   return (<motion.section
-      id="projects"
+      id="experience"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -154,7 +154,7 @@ function Experience() {
 
 function Blog() {
   return (<motion.section
-      id="projects"
+      id="blog"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -170,7 +170,7 @@ function Blog() {
 
 function Contact() {
   return (<motion.section
-      id="projects"
+      id="contact"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
