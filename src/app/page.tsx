@@ -53,10 +53,10 @@ function ProfileCard() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={smoothTransition}
-      className="sticky top-32 bg-white rounded-[2rem] p-8 text-black flex flex-col items-center text-center shadow-2xl"
+      className="sticky top-32 bg-white rounded-[2rem] p-6 text-black flex flex-col items-center text-center shadow-2xl"
     >
-      <div className="relative w-full aspect-square rounded-2xl bg-[#E04D1B] mb-8 overflow-hidden flex items-end justify-center">
-        <div className="absolute top-0 left-0 w-full h-full border-[3px] border-dashed border-white/20 rounded-2xl scale-110 -translate-x-4 -translate-y-4" />
+      <div className="relative w-[calc(100%-4rem)] aspect-square rounded-2xl bg-[#E04D1B] mb-8 overflow-hidden flex items-end justify-center">
+        <div className="absolute top-0 left-0 w-full h-full rounded-2xl scale-110 -translate-x-4 -translate-y-4" />
         <img
           src="/profile.png"
           alt="Sukant Rajkarnikar"
@@ -69,20 +69,20 @@ function ProfileCard() {
       </h1>
 
       <div className="flex gap-2 text-[#E04D1B]">
-        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 shadow-lg shadow-[#E04D1B]/30">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-[#E04D1B]/30">
           <img className='w-7' src="/icon-flutter.png" />
         </div>
-        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 shadow-lg shadow-[#E04D1B]/30">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-[#E04D1B]/30">
           <img className='w-7' src="/icon-kotlin.png" />
         </div>
-        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-4 shadow-lg shadow-[#E04D1B]/30">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-[#E04D1B]/30">
           <img className='w-7' src="/icon-figma.png" />
         </div>
       </div>
 
 
-      <p className="text-neutral-500 font-medium text-sm leading-relaxed mb-8 max-w-[250px]">
-        A mobile developer with experience in Flutter and Kotlin.
+      <p className="text-neutral-500 font-medium text-lg line-height-0.5 leading-tight mb-8 max-w-[250px] ">
+        A Flutter and Kotlin specialist engineering premium mobile experiences.
       </p>
 
       <div className="flex gap-4 text-[#E04D1B]">
@@ -106,81 +106,137 @@ function ProfileCard() {
 
 function HeroContent() {
   return (<motion.section
-      id="home"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ ...smoothTransition, delay: 0.2 }}
-      className="min-h-screen flex flex-col justify-center py-20"
-    >
-      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
-        SOFTWARE <br />
-        <span className="text-neutral-600">ENGINEER</span>
-      </h2>
-    </motion.section>);
+    id="home"
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ ...smoothTransition, delay: 0.2 }}
+    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+  >
+    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-relaxed mb-6">
+      SOFTWARE <br />
+      <span className="text-neutral-600">ENGINEER</span>
+    </h2>
+
+    <p className="text-neutral-400 text-lg max-w-xl leading-snug tracking-relaxed mb-16">
+      I bridge the gap between beautiful UI design and robust mobile architecture. Passionate about engineering native quality applications that don't just function flawlessly, they captivate users.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] duration-300 border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
+        <div>
+          <span className="text-xl font-bold mb-3 text-white block">Clean Architecture</span>
+          <span className="text-sm text-neutral-400 leading-relaxed block">
+            Building scalable, decoupled systems that are easy to maintain and test.
+          </span>
+        </div>
+        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] duration-300 transition-colors mt-8 rounded-full" />
+      </div>
+      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] duration-300 border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
+        <div>
+          <span className="text-xl font-bold mb-3 text-white block">State Management</span>
+          <span className="text-sm text-neutral-400 leading-relaxed block">
+            Expertise in handling complex application states using modern tooling.
+          </span>
+        </div>
+        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] duration-300 transition-colors mt-8 rounded-full" />
+      </div>
+      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
+        <div>
+          <span className="text-xl font-bold mb-3 text-white block">Pixel-Perfect UI</span>
+          <span className="text-sm text-neutral-400 leading-relaxed block">
+            Translating complex designs into smooth, interactive frontend experiences.
+          </span>
+        </div>
+        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] transition-colors mt-8 rounded-full" />
+      </div>
+
+    </div>
+  </motion.section>);
 }
 
 function Projects() {
   return (<motion.section
-      id="projects"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={smoothTransition}
-      className="min-h-screen flex flex-col justify-center py-20"
-    >
-      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-        RECENT <br />
-        <span className="text-neutral-600">PROJECTS</span>
-      </h2>
+    id="projects"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={smoothTransition}
+    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+  >
+    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
+      RECENT <br />
+      <span className="text-neutral-600">PROJECTS</span>
+    </h2>
 
-    </motion.section>);
+  </motion.section>);
 }
 
 function Experience() {
   return (<motion.section
-      id="experience"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={smoothTransition}
-      className="min-h-screen flex flex-col justify-center py-20"
-    >
-      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-        EXPERIENCES <br />
-      </h2>
+    id="experience"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={smoothTransition}
+    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+  >
+    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
+      EXPERIENCES <br />
+    </h2>
 
-    </motion.section>);
+  </motion.section>);
 }
 
 function Blog() {
   return (<motion.section
-      id="blog"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={smoothTransition}
-      className="min-h-screen flex flex-col justify-center py-20"
-    >
-      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-        THOUGHTS <br />
-      </h2>
+    id="blog"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={smoothTransition}
+    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+  >
+    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
+      THOUGHTS <br />
+    </h2>
 
-    </motion.section>);
+  </motion.section>);
 }
 
 function Contact() {
   return (<motion.section
-      id="contact"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={smoothTransition}
-      className="min-h-screen flex flex-col justify-center py-20"
-    >
-      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-        LET'S WORK <br />
-        <span className="text-neutral-600">TOGETHER</span>
-      </h2>
+    id="contact"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={smoothTransition}
+    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+  >
+    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
+      LET'S WORK <br />
+      <span className="text-neutral-600">TOGETHER</span>
+    </h2>
 
-    </motion.section>);
+    <form className="space-y-6 max-w-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-neutral-500">Name</label>
+            <input type="text" placeholder="Your Name" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-neutral-500">Email</label>
+            <input type="email" placeholder="Your@email.com" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label className="text-sm text-neutral-500">Message</label>
+          <textarea placeholder="Message" rows={4} className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all resize-none" />
+        </div>
+
+        <button type="button" className="w-full bg-[#E04D1B] hover:bg-[#c23f11] text-white font-bold py-4 rounded-xl transition-colors mt-4">
+          Submit
+        </button>
+      </form>
+  </motion.section>);
 }
