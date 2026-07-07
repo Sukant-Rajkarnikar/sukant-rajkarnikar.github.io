@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Briefcase, Flame, FolderOpen, Home, Mail, MoveDown, PenSquare } from 'lucide-react';
+import { ArrowUpRight, Briefcase, Flame, FolderOpen, Home, Mail, MoveDown, PenSquare } from 'lucide-react';
 import { CiLinkedin } from 'react-icons/ci';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { FaFlutter, FaLinkedin } from 'react-icons/fa6';
@@ -155,20 +155,44 @@ function HeroContent() {
 }
 
 function Projects() {
-  return (<motion.section
-    id="projects"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
-  >
-    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-      RECENT <br />
-      <span className="text-neutral-600">PROJECTS</span>
-    </h2>
 
-  </motion.section>);
+  const projects = [
+    { title: "Knits & Stitches", subtitle: "Node JS website", image: "/profile.png"},
+    { title: "Splitwise", subtitle: "Flutter mobile application", image: "/profile.png"},
+  ];
+
+  return (
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={smoothTransition}
+      className="min-h-screen flex flex-col justify-start scroll-mt-18 py-10"
+    >
+      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
+        RECENT <br />
+        <span className="text-neutral-600">PROJECTS</span>
+      </h2>
+
+      <div className="space-y-4">
+        {projects.map((project, idx) => (
+          <div key={idx} className="group flex items-center justify-between p-4 pr-8 bg-[#1C1C1C] hover:bg-[#252525] border border-transparent hover:border-neutral-800 rounded-2xl transition-all cursor-pointer">
+            <div className="flex items-center gap-6">
+              <div className={`w-24 h-24 md:w-32 md:h-32 rounded-xl flex items-center justify-center bg-white`}>
+                <img className='w-full' src={project.image} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                <p className="text-neutral-500">{project.subtitle}</p>
+              </div>
+            </div>
+            <ArrowUpRight className="text-[#E04D1B] opacity-0 group-hover:opacity-100 transition-opacity" size={28} />
+          </div>
+        ))}
+      </div>
+
+    </motion.section>);
 }
 
 function Experience() {
@@ -178,7 +202,7 @@ function Experience() {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+    className="min-h-screen flex flex-col justify-start scroll-mt-13 py-15"
   >
     <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
       EXPERIENCES <br />
@@ -194,7 +218,7 @@ function Blog() {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+    className="min-h-screen flex flex-col justify-start scroll-mt-13 py-15"
   >
     <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
       THOUGHTS <br />
@@ -210,7 +234,7 @@ function Contact() {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+    className="min-h-screen flex flex-col justify-start scroll-mt-13 pt-15"
   >
     <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
       LET'S WORK <br />
@@ -218,25 +242,25 @@ function Contact() {
     </h2>
 
     <form className="space-y-6 max-w-2xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col gap-2">
-            <label className="text-sm text-neutral-500">Name</label>
-            <input type="text" placeholder="Your Name" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-sm text-neutral-500">Email</label>
-            <input type="email" placeholder="Your@email.com" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
-          </div>
-        </div>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex flex-col gap-2">
-          <label className="text-sm text-neutral-500">Message</label>
-          <textarea placeholder="Message" rows={4} className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all resize-none" />
+          <label className="text-sm text-neutral-500">Name</label>
+          <input type="text" placeholder="Your Name" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
         </div>
+        <div className="flex flex-col gap-2">
+          <label className="text-sm text-neutral-500">Email</label>
+          <input type="email" placeholder="Your@email.com" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
+        </div>
+      </div>
 
-        <button type="button" className="w-full bg-[#E04D1B] hover:bg-[#c23f11] text-white font-bold py-4 rounded-xl transition-colors mt-4">
-          Submit
-        </button>
-      </form>
+      <div className="flex flex-col gap-2">
+        <label className="text-sm text-neutral-500">Message</label>
+        <textarea placeholder="Message" rows={4} className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all resize-none" />
+      </div>
+
+      <button type="button" className="w-full bg-[#E04D1B] hover:bg-[#c23f11] text-white font-bold py-4 rounded-xl transition-colors mt-4">
+        Submit
+      </button>
+    </form>
   </motion.section>);
 }
