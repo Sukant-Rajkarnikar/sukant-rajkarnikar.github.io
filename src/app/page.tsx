@@ -25,7 +25,7 @@ export default function HomePage() {
           <HeroContent />
           <Projects />
           <Experience />
-          <Blog />
+          {/* <Blog /> */}
           <Contact />
         </div>
       </main>
@@ -40,7 +40,7 @@ function TopNav() {
         <a href="#home" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><Home size={20} /></a>
         <a href="#projects" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><FolderOpen size={20} /></a>
         <a href="#experience" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><Briefcase size={20} /></a>
-        <a href="#blog" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><PenSquare size={20} /></a>
+        {/* <a href="#blog" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><PenSquare size={20} /></a> */}
         <a href="#contact" className="text-neutral-400 hover:text-[#E04D1B] transition-colors"><Mail size={20} /></a>
       </div>
     </div>
@@ -196,19 +196,66 @@ function Projects() {
 }
 
 function Experience() {
-  return (<motion.section
-    id="experience"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-13 py-15"
-  >
-    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
-      EXPERIENCES <br />
-    </h2>
+  const experiences = [
+    {
+      company: "Evolve Asia Pvt. Ltd.",
+      role: "Software Engineer",
+      date: "Jul 2024 - Mar 2026",
+      desc: "Architected and developed scalable mobile applications using Flutter and Kotlin. Led core feature implementation, optimized app performance, and maintained clean architecture standards across the codebase."
+    },
+    {
+      company: "Evolve Asia Pvt. Ltd.",
+      role: "Junior Software Engineer",
+      date: "Jul 2023 - Jul 2024",
+      desc: "Developed and maintained cross-platform mobile apps with flutter and native android applications with Kotlin. Handled complex state management, integrated REST APIs, and collaborated closely with the design team to ensure pixel-perfect UIs."
+    },
+    {
+      company: "Evolve Asia Pvt. Ltd.",
+      role: "Flutter Intern",
+      date: "Oct 2022 - Jul 2023",
+      desc: "Assisted in building Flutter application modules. Gained hands-on experience in modern mobile development workflows, state management, and version control."
+    },
+    {
+      company: "Creatu Developers",
+      role: "UI/ UX Designer",
+      date: "Apr 2022 - Aug 2022",
+      desc: "Designed intuitive user interfaces and crafted interactive prototypes. Created wireframes and user flows to seamlessly bridge the gap between initial concepts and final development."
+    }
+  ];
 
-  </motion.section>);
+  return (
+    <motion.section
+      id="experience"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={smoothTransition}
+      className="min-h-screen flex flex-col justify-center scroll-mt-18 py-10"
+    >
+      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
+        EXPERIENCES
+      </h2>
+      <div className="relative border-l border-neutral-800 ml-3 md:ml-4 space-y-12">
+        {experiences.map((exp, idx) => (
+          <div key={idx} className="relative pl-8 md:pl-12 group cursor-default">
+            <div className="absolute w-4 h-4 rounded-full bg-[#121212] border-2 border-neutral-700 group-hover:border-[#E04D1B] group-hover:scale-125 transition-all duration-300 -left-[9px] top-1.5" />
+            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+              <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
+              <span className="text-sm font-semibold text-[#E04D1B] mt-2 md:mt-0 tracking-wider">
+                {exp.date}
+              </span>
+            </div>
+            <span className="text-lg text-neutral-300 font-medium block mb-4">
+              {exp.company}
+            </span>
+            <p className="text-neutral-400 leading-relaxed max-w-2xl">
+              {exp.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.section>
+  );
 }
 
 function Blog() {
@@ -234,7 +281,7 @@ function Contact() {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-13 pt-15"
+    className="min-h-screen flex flex-col justify-start scroll-mt-10 pt-20"
   >
     <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
       LET'S WORK <br />
