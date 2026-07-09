@@ -1,15 +1,11 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Briefcase, Flame, FolderOpen, Home, Mail, MoveDown, PenSquare } from 'lucide-react';
-import { CiLinkedin } from 'react-icons/ci';
+import { ArrowUpRight, Briefcase, FolderOpen, Home, Mail, PenSquare } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { FaFlutter, FaLinkedin } from 'react-icons/fa6';
 import { FiFigma } from 'react-icons/fi';
-import { LiaLinkedin } from 'react-icons/lia';
-import { RiFlutterLine } from 'react-icons/ri';
-import { SiKotlin } from 'react-icons/si';
-import { TbBrandFlutter, TbBrandKotlin } from 'react-icons/tb';
+import { SiKotlin, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { TbBrandFlutter, TbBrandNextjs } from 'react-icons/tb';
 
 const smoothTransition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 
@@ -68,7 +64,7 @@ function ProfileCard() {
         Sukant Rajkarnikar
       </h1>
 
-      <div className="flex gap-2 text-[#E04D1B]">
+      {/* <div className="flex gap-2 text-[#E04D1B]">
         <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-[#E04D1B]/30">
           <img className='w-7' src="/icon-flutter.png" />
         </div>
@@ -78,7 +74,7 @@ function ProfileCard() {
         <div className="w-10 h-10 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-[#E04D1B]/30">
           <img className='w-7' src="/icon-figma.png" />
         </div>
-      </div>
+      </div> */}
 
 
       <p className="text-neutral-500 font-medium text-lg line-height-0.5 leading-tight mb-8 max-w-[250px] ">
@@ -105,60 +101,68 @@ function ProfileCard() {
 }
 
 function HeroContent() {
-  return (<motion.section
-    id="home"
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ ...smoothTransition, delay: 0.2 }}
-    className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
-  >
-    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-relaxed mb-6">
-      SOFTWARE <br />
-      <span className="text-neutral-600">ENGINEER</span>
-    </h2>
+  const skills = [
+    { name: "Flutter", icon: <TbBrandFlutter size={24} />, level: 85 },
+    { name: "Kotlin", icon: <SiKotlin size={20} />, level: 70 },
+    { name: "UI/UX Design", icon: <FiFigma size={22} />, level: 60 },
+    { name: "Next.js / React", icon: <SiNextdotjs size={20} />, level: 40 },
+    { name: "Tailwind CSS", icon: <SiTailwindcss size={22} />, level: 40 },
+  ];
 
-    <p className="text-neutral-400 text-lg max-w-xl leading-snug tracking-relaxed mb-16">
-      I bridge the gap between beautiful UI design and robust mobile architecture. Passionate about engineering native quality applications that don't just function flawlessly, they captivate users.
-    </p>
+  return (
+    <motion.section
+      id="home"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ...smoothTransition, delay: 0.2 }}
+      className="min-h-screen flex flex-col justify-start scroll-mt-28 py-4"
+    >
+      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-relaxed mb-6">
+        SOFTWARE <br />
+        <span className="text-neutral-600">ENGINEER</span>
+      </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] duration-300 border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
-        <div>
-          <span className="text-xl font-bold mb-3 text-white block">Clean Architecture</span>
-          <span className="text-sm text-neutral-400 leading-relaxed block">
-            Building scalable, decoupled systems that are easy to maintain and test.
-          </span>
-        </div>
-        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] duration-300 transition-colors mt-8 rounded-full" />
-      </div>
-      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] duration-300 border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
-        <div>
-          <span className="text-xl font-bold mb-3 text-white block">State Management</span>
-          <span className="text-sm text-neutral-400 leading-relaxed block">
-            Expertise in handling complex application states using modern tooling.
-          </span>
-        </div>
-        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] duration-300 transition-colors mt-8 rounded-full" />
-      </div>
-      <div className="group flex flex-col justify-between p-8 bg-[#1C1C1C] hover:bg-[#252525] border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default">
-        <div>
-          <span className="text-xl font-bold mb-3 text-white block">Pixel-Perfect UI</span>
-          <span className="text-sm text-neutral-400 leading-relaxed block">
-            Translating complex designs into smooth, interactive frontend experiences.
-          </span>
-        </div>
-        <div className="w-12 h-1 bg-neutral-800 group-hover:bg-[#E04D1B] transition-colors mt-8 rounded-full" />
-      </div>
+      <p className="text-neutral-400 text-lg max-w-xl leading-snug tracking-relaxed mb-16">
+        I bridge the gap between beautiful UI design and robust mobile architecture. Passionate about engineering native quality applications that don't just function flawlessly, they captivate users.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skills.map((skill, idx) => (
+          <div
+            key={idx}
+            className="group flex flex-col justify-center p-6 bg-[#1C1C1C] hover:bg-[#252525] duration-300 border border-transparent hover:border-neutral-800 rounded-3xl transition-all cursor-default"
+          >
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex items-center gap-3">
+                <div className="text-neutral-500 group-hover:text-[#E04D1B] transition-colors duration-300">
+                  {skill.icon}
+                </div>
+                <span className="text-lg font-bold text-white block">{skill.name}</span>
+              </div>
+            </div>
 
-    </div>
-  </motion.section>);
+            <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800/50">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: `${skill.level}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 + (idx * 0.1) }}
+                className="h-full bg-[#E04D1B] rounded-full relative"
+              >
+                <div className="absolute top-0 right-0 w-2 h-full bg-white/30 rounded-full" />
+              </motion.div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.section>
+  );
 }
 
 function Projects() {
 
   const projects = [
-    { title: "Knits & Stitches", subtitle: "Node JS website", image: "/profile.png"},
-    { title: "Splitwise", subtitle: "Flutter mobile application", image: "/profile.png"},
+    { title: "Knits & Stitches", subtitle: "NextJS website", image: "/projects/KnS_website.png", url:"https://knitsandstitches.com/" },
+    { title: "Splitwise", subtitle: "Flutter mobile application", image: "", url:"" },
   ];
 
   return (
@@ -168,7 +172,7 @@ function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={smoothTransition}
-      className="min-h-screen flex flex-col justify-start scroll-mt-18 py-10"
+      className="min-h-screen flex flex-col justify-start scroll-mt-10 pt-20"
     >
       <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-16">
         RECENT <br />
@@ -177,18 +181,22 @@ function Projects() {
 
       <div className="space-y-4">
         {projects.map((project, idx) => (
-          <div key={idx} className="group flex items-center justify-between p-4 pr-8 bg-[#1C1C1C] hover:bg-[#252525] border border-transparent hover:border-neutral-800 rounded-2xl transition-all cursor-pointer">
+          <a 
+            key={idx} 
+            href={project.url}
+            className="group flex items-center justify-between p-4 pr-8 bg-[#1C1C1C] hover:bg-[#252525] border border-transparent hover:border-neutral-800 rounded-2xl transition-all cursor-pointer"
+          >
             <div className="flex items-center gap-6">
-              <div className={`w-24 h-24 md:w-32 md:h-32 rounded-xl flex items-center justify-center bg-white`}>
-                <img className='w-full' src={project.image} />
+              <div className={`w-40 h-24 md:w-52 md:h-32 rounded-xl flex items-center justify-center bg-white/5 overflow-hidden`}>
+                <img className='w-full h-full object-cover' src={project.image} alt={project.title} />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                <h3 className="text-2xl font-bold mb-1 text-white">{project.title}</h3>
                 <p className="text-neutral-500">{project.subtitle}</p>
               </div>
             </div>
             <ArrowUpRight className="text-[#E04D1B] opacity-0 group-hover:opacity-100 transition-opacity" size={28} />
-          </div>
+          </a>
         ))}
       </div>
 
@@ -275,39 +283,66 @@ function Blog() {
 }
 
 function Contact() {
-  return (<motion.section
-    id="contact"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={smoothTransition}
-    className="min-h-screen flex flex-col justify-start scroll-mt-10 pt-20"
-  >
-    <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
-      LET'S WORK <br />
-      <span className="text-neutral-600">TOGETHER</span>
-    </h2>
+  return (
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={smoothTransition}
+      className="min-h-screen flex flex-col justify-start scroll-mt-10 pt-20"
+    >
+      <h2 className="text-6xl md:text-[6.5rem] font-black leading-none tracking-tighter mb-8">
+        LET'S WORK <br />
+        <span className="text-neutral-600">TOGETHER</span>
+      </h2>
 
-    <form className="space-y-6 max-w-2xl">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col gap-2">
-          <label className="text-sm text-neutral-500">Name</label>
-          <input type="text" placeholder="Your Name" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
+      <form 
+        action="https://formspree.io/f/meebyjkq" 
+        method="POST" 
+        className="space-y-6 max-w-2xl"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-neutral-500">Name</label>
+            <input 
+              type="text" 
+              name="name" 
+              required 
+              placeholder="Your Name" 
+              className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" 
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-neutral-500">Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              required 
+              placeholder="Your@email.com" 
+              className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" 
+            />
+          </div>
         </div>
+
         <div className="flex flex-col gap-2">
-          <label className="text-sm text-neutral-500">Email</label>
-          <input type="email" placeholder="Your@email.com" className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all" />
+          <label className="text-sm text-neutral-500">Message</label>
+          <textarea 
+            name="message" 
+            required 
+            placeholder="Message" 
+            rows={4} 
+            className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all resize-none" 
+          />
         </div>
-      </div>
 
-      <div className="flex flex-col gap-2">
-        <label className="text-sm text-neutral-500">Message</label>
-        <textarea placeholder="Message" rows={4} className="w-full bg-[#1C1C1C] text-white p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#E04D1B] transition-all resize-none" />
-      </div>
-
-      <button type="button" className="w-full bg-[#E04D1B] hover:bg-[#c23f11] text-white font-bold py-4 rounded-xl transition-colors mt-4">
-        Submit
-      </button>
-    </form>
-  </motion.section>);
+        <button 
+          type="submit" 
+          className="w-full bg-[#E04D1B] hover:bg-[#c23f11] text-white font-bold py-4 rounded-xl transition-colors mt-4"
+        >
+          Submit
+        </button>
+      </form>
+    </motion.section>
+  );
 }
