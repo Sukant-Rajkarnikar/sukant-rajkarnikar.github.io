@@ -19,7 +19,7 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-[#050505] text-neutral-50 overflow-hidden px-4 selection:bg-cyan-500/30">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-[#050505] text-neutral-50 overflow-hidden px-4 selection:bg-orange-500/30">
       
       <div 
         className="fixed inset-0 pointer-events-none transition-opacity duration-300 z-0"
@@ -37,11 +37,11 @@ export default function NotFound() {
             404
           </h1>
           
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border-[1px] border-cyan-500/20 rounded-full animate-[spin_10s_linear_infinite] group-hover:border-cyan-400/50 transition-colors duration-700" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border-[1px] border-orange-500/20 rounded-full animate-[spin_10s_linear_infinite] group-hover:border-orange-400/50 transition-colors duration-700" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[90%] border-[1px] border-neutral-700/40 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
         </div>
         
-        <h2 className="text-2xl md:text-3xl font-light mb-6 tracking-widest uppercase text-cyan-400">
+        <h2 className="text-2xl md:text-3xl font-light mb-6 tracking-widest uppercase text-orange-400">
           System <span className="font-bold">Failure</span>
         </h2>
         
@@ -51,14 +51,14 @@ export default function NotFound() {
         
         <Link 
           href="/" 
-          className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-neutral-50 border border-neutral-700 rounded-full overflow-hidden transition-all hover:border-cyan-400 bg-neutral-900/50 backdrop-blur-md"
+          className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-neutral-50 border border-neutral-700 rounded-full overflow-hidden transition-all hover:border-orange-400 bg-neutral-900/50 backdrop-blur-md"
         >
-          <div className="absolute bottom-0 left-0 w-full h-full bg-cyan-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+          <div className="absolute bottom-0 left-0 w-full h-full bg-orange-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           
           <span className="relative z-10 flex items-center gap-3 tracking-wide text-sm md:text-base">
             REBOOT SYSTEM
             <svg 
-              className="w-5 h-5 transition-transform group-hover:rotate-180 duration-500 text-cyan-400" 
+              className="w-5 h-5 transition-transform group-hover:rotate-180 duration-500 text-orange-400" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24" 

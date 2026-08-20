@@ -162,7 +162,8 @@ function Projects() {
 
   const projects = [
     { title: "Knits & Stitches", subtitle: "NextJS website", image: "/projects/KnS_website.png", url:"https://knitsandstitches.com/" },
-    { title: "Splitwise", subtitle: "Flutter mobile application", image: "", url:"" },
+    { title: "Furnihome AR", subtitle: "Flutter Mobile application with AR functionality", image: "/projects/furnihome_ar.jpg", url:"https://github.com/Sukant-Rajkarnikar/furnihome_ar" },
+    // { title: "Splitstack", subtitle: "Flutter mobile application", image: "", url:"" },
   ];
 
   return (
